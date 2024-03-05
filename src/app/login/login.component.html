@@ -1,0 +1,23 @@
+<form class="login-form">
+    <h1>Login</h1>
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" class="form-input" placeholder="Username" [(ngModel)]="loginObj.username">
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" class="form-input" placeholder="Password" [(ngModel)]="loginObj.password">
+    </div>
+    <div class="button-group">
+      <button type="submit" class="login-button" (click)="onLogin()">Login</button>
+      <button routerLink="/registration" type="button" class="register-button">Register</button>
+    </div>
+    
+    <div class="error-message" *ngIf="errorMessage">
+ 
+      <div class="popup"> 
+        <p>{{ errorMessage }}</p>
+      </div>
+    </div>
+  </form>
+  

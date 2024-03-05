@@ -1,0 +1,32 @@
+<app-navigation></app-navigation>
+<!-- dodati ngIf koji je korisnik -->
+<table *ngIf="(isAdmin() | async)"> 
+    <tr>
+      <th>Username</th>
+      <th>Role</th>
+      <th>Change Role</th>
+    </tr>
+    <tr *ngFor="let user of users">
+      <td>{{ user.username }}</td>
+      <td>{{ user.role }}</td>
+      <td>
+        <select (change)="changeUserRole(user.username, $event)">
+          <option value="admin">Admin</option>
+          <option value="author">Author</option>
+          <option value="user">User</option>
+        </select>
+      </td>
+    </tr>
+</table>
+
+<form *ngIf="(isAuthor() | async)" (ngSubmit)="onSubmit()">
+  <label for="naslov">Naslov:</label><br>
+  <input type="text" id="naslov" name="naslov" [(ngModel)]="newVijest.naslov"><br>
+  <label for="text">Text:</label><br>
+  <textarea id="text" name="text" [(ngModel)]="newVijest.text"></textarea><br>
+  <label for="idkategorija">Kategorija:</label><br>
+  <select id="idkategorija" name="idkategorija" [(ngModel)]="newVijest.idkategorija">
+    <option *ngFor="let category of categories" [value]="category.idkategorije">{{ category.naziv }}</option>
+  </select><br>
+  <input type="submit" value="Submit">
+</form>

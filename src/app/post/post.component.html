@@ -1,0 +1,23 @@
+<app-navigation></app-navigation>
+<div class="post" *ngFor="let vijest of post">
+    <h2>{{ vijest.naslov }}</h2>
+    <p>{{ vijest.text }}</p>
+    <p class="timestamp">{{ vijest.timestamp }}</p>
+    <div *ngIf="isAuthor() | async">
+      <button (click)="updatePost(vijest.idvijesti)">Update Post</button>
+      <button (click)="deletePost(vijest.idvijesti)">Delete Post</button>
+  </div>
+</div>
+
+<div class="comments">
+    <h3>Comments</h3>
+    <div *ngFor="let comment of comments" class="comment">
+      <p>{{ comment.text }}</p>
+      <p class="timestamp">{{ comment.timestamp }}</p>
+    </div>
+</div>
+
+<form (ngSubmit)="postComment(commentText.value); commentText.value=''">
+  <input #commentText type="text" required>
+  <button type="submit">Post Comment</button>
+</form>

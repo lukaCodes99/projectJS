@@ -1,0 +1,7 @@
+<app-navigation></app-navigation>
+<div class="news-container">
+    <div class="news-item" *ngFor="let item of news" (click)="onPostClick(item.idvijesti)">
+      <h2>{{ item.naslov }}</h2>
+      <p>{{ item.text }}</p>
+</div>
+</div>

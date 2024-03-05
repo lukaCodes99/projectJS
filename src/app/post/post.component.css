@@ -1,0 +1,33 @@
+.post {
+  margin-bottom: 2em;
+}
+
+.post h2 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+.post .timestamp {
+  font-size: 0.8em;
+  color: #888;
+}
+
+.comments {
+  margin-top: 2em;
+}
+
+.comments h3 {
+  font-size: 1.5em;
+  margin-bottom: 1em;
+}
+
+.comment {
+  border-top: 1px solid #eee;
+  padding-top: 1em;
+  margin-top: 1em;
+}
+
+.comment .timestamp {
+  font-size: 0.8em;
+  color: #888;
+}

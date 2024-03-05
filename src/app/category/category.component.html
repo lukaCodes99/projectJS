@@ -1,0 +1,11 @@
+<app-navigation></app-navigation>
+<div class="news-container" *ngIf="news.length > 0; else noNews" >
+    <div class="news-item" *ngFor="let item of news" (click)="onPostClick(item.idvijesti)">
+      <h2>{{ item.naslov }}</h2>
+      <p>{{ item.text }}</p>
+    </div>
+  </div>
+  
+  <ng-template #noNews>
+    <p>No news available for this category.</p>
+</ng-template>

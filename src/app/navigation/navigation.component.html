@@ -1,0 +1,16 @@
+<div class="header">
+  <h1 class="title" (click)="onTitleClick()">Luka's News</h1>
+  <div class="right-corner">
+    <span class="message">Dobrodošao, {{currentUsername() | async}}</span>
+    <button class="logout-btn" (click)="onLogout()">Odjava</button>
+    <button class="logout-btn" *ngIf="(isAdmin() | async)" (click)="onAdminClick()">Administracija</button>
+    <button class="logout-btn" *ngIf="(isAuthor() | async)" (click)="onAuthorClick()">Dodaj vijest</button>
+  </div>
+</div>
+
+
+<nav>
+  <ul class="nav-list">
+    <li *ngFor="let category of categories" (click)="onCategoryClick(category.idkategorije)">{{ category.naziv }}</li>
+  </ul>
+</nav>

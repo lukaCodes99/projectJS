@@ -1,0 +1,33 @@
+.register-form {
+    width: 300px;
+    margin: 0 auto;
+  }
+  
+  .register-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .register-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .register-submit-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #5C6BC0;
+    color: white;
+    cursor: pointer;
+  }
+
+  .register-submit-button:click{
+    background-color: black;
+  }
